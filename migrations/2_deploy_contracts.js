@@ -1,5 +1,5 @@
-const Migrations = artifacts.require("Migrations");
+const EthSwap = artifacts.require("EthSwap");
 // migrations to put the projetc on the blockchain
 module.exports = function(deployer) {
-  deployer.deploy(Migrations);
+  deployer.deploy(EthSwap);
 };
