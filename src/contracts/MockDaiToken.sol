@@ -6,7 +6,7 @@ contract MockDaiToken {
     string  public symbol = "DAPP";
     string  public standard = "DApp Token v1.0";
     uint8   public decimals = 18; // same value as wei
-    uint256 public totalSupply = 1000000000000000000;
+    uint256 public totalSupply = 100000000000000000000000;
 
     mapping(address => uint256) public balanceOf;
     mapping(address => mapping(address => uint256)) public allowance;
