@@ -1,10 +1,16 @@
+const MockDaiToken = artifacts.require("MockDaiToken");
+
 const EthSwap = artifacts.require("EthSwap");
 // migrations to put the projetc on the blockchain
-const MockDaiToken = artifacts.require("MockDaiToken");
 module.exports = async function(deployer) {
-deployer.deploy(MockDaiToken);
-const token = await MockDaiToken.deployed();
-deployer.deploy(EthSwap);
-const ethSwap = await EthSwap.deployed();
-await token.transfer(ethSwap.address, '10000000000000000000')
+    //deploy mockdai
+    await deployer.deploy(MockDaiToken);
+    const token = await MockDaiToken.deployed()
+
+    //deply ethswap
+    await deployer.deploy(EthSwap);
+    const ethSwap = await EthSwap.deployed()
+
+    //transfer all token to ethswap
+    await token.transfer(ethSwap.address, '1000000000000000000')
 };
